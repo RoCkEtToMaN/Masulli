@@ -105,8 +105,8 @@ end
 
 x_fin=x_ran
 
-funzioneFINALE=myfuns(x_fin)
+funzioneFINALE=myfuns(x_ran)
 
-     
-            
-            
+
+%dovrebbe essere giusto anche se non si hanno risultati provenienti da altri algoritmi.
+%Working Progress
