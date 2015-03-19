@@ -112,3 +112,6 @@ funzioneFINALE=myfuns(x_fin)
             
             
 %questo dovrebbere essere il quanto
+
+
+%Ora finisco con il sistema non lineare
