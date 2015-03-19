@@ -111,3 +111,4 @@ funzioneFINALE=myfuns(x_fin)
      
             
             
+%questo dovrebbere essere il quanto
