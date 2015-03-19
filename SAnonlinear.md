@@ -1,17 +1,16 @@
 # Masulli
-#SAprova2
-
+# SA per un sistema di equazioni non lineari
 clear all
 clc
 
-x0=[0.76541,1.76]';
+x0=[0.5,.5,.5]';
 
 x_corrente=x0; %è la x*
 t0=0.06; %   Valore iniziale di t0:valore abbastanza alto, ad esempio stimato
              % come la massima differenza tra i valori delle funzioni obiettivo di
              % due soluzioni nello stesso intorno
 n=randi([1:2],1);       
-x_ran=x_corrente+0.1*rand(2,1);
+x_ran=x_corrente+0.1*rand(3,1);
 x_fin=x0;
 t=t0;
 tfinale=0.01;
@@ -19,10 +18,10 @@ iter=0;
 k=0;
 dk=5;
 itermax=25;
-pr=rand(2,1);
+pr=rand(3,1);
 b=rand(20,1);   %determino un valore casuale di alfa appartenente al range [0.8, 0.99]
 b2=zeros(20,1);
-esp=zeros(2,1);
+esp=zeros(3,1);
 p=0;
 
 for i=1:size(b,1)
@@ -61,19 +60,19 @@ while (iter < itermax)
      m2=myfuns(x_corrente(:,1));      
      esp=exp(-(m1-m2)/t);
 
-    if ((fx_ran(1,1) <= fx0(1,1)))&&((fx_ran(2,1)) <= fx0(2,1))
+    if ((fx_ran(1,1) <= fx0(1,1)))&&((fx_ran(2,1)) <= fx0(2,1))&&((fx_ran(3,1)) <= fx0(3,1))
         x_corrente=x_ran;
         
         iter=0;
 %          if x_ran(1,1)<x_ran(2,1)
 %              x_ran(1,1)= x_ran(1,1)+rand(1,1);
 %          end
-         if ((fx_ran(1,1) < final(1,1)))&&((fx_ran(2,1)) < final(2,1))
+         if ((fx_ran(1,1) < final(1,1)))&&((fx_ran(2,1)) < final(2,1))&&((fx_ran(3,1)) < final(3,1))
             x_fin=x_ran;
          end
     else
 
-        if (le(pr(1,1),esp(1,1)))&&(le(pr(2,1),esp(2,1)))
+        if (le(pr(1,1),esp(1,1)))&&(le(pr(2,1),esp(2,1)))&&(le(pr(3,1),esp(3,1)))
             x_corrente=x_ran;
 %             t=alfa*t;
 %             k=0;
@@ -95,7 +94,7 @@ if t<=tfinale
         break;        
 end
 % n=randi([1:2],1);       
-x_ran=x_ran+0.01*rand(2,1);
+x_ran=x_ran+0.01*rand(3,1);
 
     
 end
@@ -111,7 +110,3 @@ funzioneFINALE=myfuns(x_fin)
      
             
             
-%questo dovrebbere essere il quanto
-
-
-%Ora finisco con il sistema non lineare
