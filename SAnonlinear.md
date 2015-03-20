@@ -110,3 +110,5 @@ funzioneFINALE=myfuns(x_fin)
 
 %dovrebbe essere giusto anche se non si hanno risultati provenienti da altri algoritmi.
 %Working Progress
+
+u(x_ran)=bella(x_fin)
