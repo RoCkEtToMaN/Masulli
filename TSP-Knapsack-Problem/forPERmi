@@ -19,6 +19,10 @@ Cities(1:2,:)=cities;
          Cities(3,i)=-1;
      end
  end
+ #e se fosse
+ for i=1:2
+ 
+ 
  
  
  
