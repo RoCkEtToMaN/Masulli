@@ -24,6 +24,24 @@ Cities(1:2,:)=cities;
  
  
  
+ #ERRATA CORRIGE
  
- #secondo me mi va in distance
- #cosi aggiunge un rigo "mi"
+ [r c]=size(cities);
+
+Cities=zeros(3,c);
+Cities(1:2,:)=cities;
+[vm im]=max(cities(1,:));
+
+ for i=1:c
+     if Cities(1,i)>(vm/2)
+         Cities(3,i)=1;
+     else
+         Cities(3,i)=-1;
+     end
+ end
+ 
+ #ho apportato alcune modifiche.
+ #La matrice che si vede  è una 2x20, la prima riga la conisdero come se fosse la x e la seconda la y.
+ #Quindi mi baso sulla prima riga per determinare la poszione del fiume, per essere precisi come il valore max diviso per due.
+ 
+
