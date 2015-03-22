@@ -45,3 +45,10 @@ Cities(1:2,:)=cities;
  #Quindi mi baso sulla prima riga per determinare la poszione del fiume, per essere precisi come il valore max diviso per due.
  
 
+#Altro errorino: per renderlo più generale possibile
+
+"Cities=zeros(r+1,c);"
+
+
+
+
