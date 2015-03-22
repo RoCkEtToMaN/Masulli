@@ -11,3 +11,8 @@ for i = 1 : n
     s(:,city_1) = s(:,city_2);
     s(:,city_2) = temp;
 end
+
+
+
+
+#BACIOOOOOO
