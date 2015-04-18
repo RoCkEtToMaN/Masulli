@@ -1,0 +1,51 @@
+#Matrice  Confusione
+
+
+clear all
+clc
+load label1;
+righeC=unique(label1);
+colonneC=unique(label2);
+
+[Rrighe Rcolonne]=size(righeC);
+[Crighe Ccolonne]=size(colonneC);
+
+C=zeros(Rcolonne+2,Ccolonne+2);
+C(2:Rcolonne+1,1)=righeC;
+C(1,2:Ccolonne+1)=colonneC;
+C
+B=C(2:Rcolonne+1,2:Ccolonne+1)
+
+for i=1:size(label1,2)
+    
+#        primar=label1(1,i);
+#         primac=label2(1,i);
+    if i==1
+        primar=label1(1,i);
+        primac=label2(1,i);
+        B(primar,primac)=1
+    elseif label1(1,i)==primar && label2(1,i)==primac
+        B(primar,primac)=B(primar,primac)+1
+        primar=label1(1,i);
+        primac=label2(1,i);
+    else
+        primar=label1(1,i);
+        primac=label2(1,i);
+        B(primar,primac)=1
+         primar=label1(1,i);
+        primac=label2(1,i);
+       
+    
+    end
+end
+
+C(2:Rcolonne+1,2:Ccolonne+1)=B;
+for i=2:Rcolonne+1
+    C(i,Ccolonne+2)=sum(C(i,2:Ccolonne+1));
+end
+# C(2,Ccolonne+2)=sum(C(2,2:Ccolonne+1));
+# C(3,Ccolonne+2)=sum(C(3,2:Ccolonne+1));
+for i=2:Ccolonne+1
+    C(Rcolonne+2,i)=sum(C(2:Rcolonne+1,i));
+end
+C
